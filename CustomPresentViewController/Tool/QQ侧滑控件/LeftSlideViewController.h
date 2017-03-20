@@ -99,4 +99,18 @@ typedef NS_ENUM(NSInteger , PanType){
  */
 -(void)changeMainViewController:(UIViewController *)newMainController close:(BOOL)close;
 
+/**
+ *  弹出presentViewController
+ *
+ *
+ */
+- (void)presentSimpleModalViewController:(UIViewController *)viewControllerToPresent
+                                  animated:(BOOL)animated;
+/**
+ *  移除presentViewController
+ *
+ *
+ */
+- (void)dismissSimpleModalViewControllerAnimated:(BOOL)animated;
+
 @end

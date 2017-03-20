@@ -124,16 +124,7 @@
     vc.startFrame=rect;
     
     AppDelegate *tempAppDelegate = KEYAPPDELEGATE;
-    UIViewController *mainVc=tempAppDelegate.LeftSlideVC.mainVC;
-    UIViewController *presentController;
-    if ([mainVc isKindOfClass:[UITabBarController class]]) {
-        presentController=((UITabBarController *)mainVc).selectedViewController;
-    }else{
-        presentController=mainVc;
-    }
-    [presentController presentViewController:vc animated:YES completion:^{
-        [tempAppDelegate.LeftSlideVC closeLeftView];//关闭左侧抽屉
-    }];
+    [tempAppDelegate.LeftSlideVC presentSimpleModalViewController:vc animated:YES];
 }
 
 

@@ -339,11 +339,44 @@
     NSLog(@"侧滑控制器释放了");
 }
 
+/**
+ *  弹出presentViewController
+ *
+ *
+ */
+- (void)presentSimpleModalViewController:(UIViewController *)viewControllerToPresent
+                                animated:(BOOL)animated{
+    if (viewControllerToPresent!=nil) {
+        UIViewController *mainVc=self.mainVC;
+        UIViewController *presentController;
+        if ([mainVc isKindOfClass:[UITabBarController class]]) {
+            presentController=((UITabBarController *)mainVc).selectedViewController;
+        }else{
+            presentController=mainVc;
+        }
+        [presentController presentViewController:viewControllerToPresent animated:YES completion:^{
+            [self closeLeftView];//关闭左侧抽屉
+        }];
+    }
+};
+
+
+
 //摇动手势
 //- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event{
 //    if (event.subtype==UIEventSubtypeMotionShake) {
 //        NSLog(@"摇一摇，摇到外婆桥");
 //    }
+//}
+
+//关闭appearence callbacks自动调用的特性
+//- (BOOL)shouldAutomaticallyForwardAppearanceMethods{
+//    return NO;
+//}
+
+//禁掉旋转回调自动传递
+//- (BOOL)shouldAutomaticallyForwardRotationMethods{
+//    return NO;
 //}
 
 @end
