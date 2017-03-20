@@ -326,7 +326,7 @@
         [self addChildViewController:targetViewController];
         targetViewController.view.frame=targetView.bounds;
         [targetView addSubview:targetViewController.view];
-        [targetViewController willMoveToParentViewController:self];
+        [targetViewController didMoveToParentViewController:self];
     }
 }
 

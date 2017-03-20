@@ -106,11 +106,6 @@ typedef NS_ENUM(NSInteger , PanType){
  */
 - (void)presentSimpleModalViewController:(UIViewController *)viewControllerToPresent
                                   animated:(BOOL)animated;
-/**
- *  移除presentViewController
- *
- *
- */
-- (void)dismissSimpleModalViewControllerAnimated:(BOOL)animated;
+
 
 @end
